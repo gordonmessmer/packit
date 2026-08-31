@@ -25,7 +25,9 @@ from packit.utils import get_default_branch
 logger = logging.getLogger(__name__)
 
 
-def get_dist_git_branches(api, dist_git_branch, pull_from_upstream=False, dry_run=False):
+def get_dist_git_branches(
+    api, dist_git_branch, pull_from_upstream=False, dry_run=False,
+):
     cmdline_dg_branches = dist_git_branch.split(",") if dist_git_branch else []
     config_dg_branches = []
     if isinstance(api.package_config, PackageConfig):
